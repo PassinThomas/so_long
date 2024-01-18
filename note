@@ -1,0 +1,11 @@
+// check lextension du fichier
+    // finisse bien par .ber
+// ouvrir la map
+    // le fichier souvre bien
+// lire toute le fichier avec gnl
+    // tout stocker dans un char *
+        // split cette string au '\n'
+// check rectangle
+// check mur
+// check si il y a bien UN joueur AU MOINS un collectible et UNE sortie
+// pathfinding //
