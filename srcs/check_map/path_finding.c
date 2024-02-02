@@ -7,7 +7,7 @@ char **map_copy(t_data *data, char **map_copy)
 
     i = 0;
     len = data->info.line;
-    map_copy = (char **)malloc(sizeof(char *) * (len + 1));
+    map_copy = (char **)malloc(sizeof(char *) * (len + 2));
     if (!map_copy)
         return (NULL);
     while (map_copy[i])
