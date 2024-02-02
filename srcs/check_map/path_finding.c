@@ -12,6 +12,7 @@ char **map_copy(t_data *data, char **map_copy)
         return (NULL);
     while (data->map[i])
     {
+        printf("%s\n", data->map[i]);
         map_copy[i] = ft_strdup(data->map[i]);
         if (!map_copy[i])
             return (ft_free_map(map_copy), NULL);
