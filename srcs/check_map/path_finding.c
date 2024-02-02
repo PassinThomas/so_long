@@ -10,7 +10,7 @@ char **map_copy(t_data *data, char **map_copy)
     map_copy = (char **)malloc(sizeof(char *) * (len + 2));
     if (!map_copy)
         return (NULL);
-    while (map_copy && i < len)
+    while (data->map[i])
     {
         map_copy[i] = ft_strdup(data->map[i]);
         if (!map_copy[i])
