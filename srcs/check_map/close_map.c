@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   close_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:59:32 by tpassin           #+#    #+#             */
-/*   Updated: 2024/01/24 06:20:03 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/02 16:35:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long.h"
 
 static int	check_close(char *str)
 {
@@ -32,23 +32,17 @@ int	check_wall(t_data *data)
 	int	len;
 
 	i = 0;
+	len = ft_strlen(data->map[0]);
 	while (data->map[i])
 	{
-		if (i == 0 || i == data->last_line)
+		if (i == 0 || i == data->info.line - 1)
 		{
 			if (!check_close(data->map[i]))
-			{
-				ERR_WALL();
-				return (0);
-			}
+				return (ft_putstr(CLOSE, 2), 0);
 		}
-		else if (data->map[i][0] || data->map[i][len - 1])
-		{
-			if (data->map[i][0] || data->map[i][len - 1])
-			{
-
-			}
-		}
+		else if (data->map[i][0] != '1' || data->map[i][len - 1] != '1')
+			return (ft_putstr(CLOSE, 2), 0);
 		i++;
 	}
+	return (1);
 }

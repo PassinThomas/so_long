@@ -3,34 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:20:28 by tpassin           #+#    #+#             */
-/*   Updated: 2023/12/26 11:21:52 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/02 16:14:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/so_long.h"
 
 static char	*line_buffer(int fd, char *next_read, char *buf);
 static char	*set_line(char *line_buffer);
 static char	*extract_line(char *buf);
-
-char	*ft_strchr(const char *s, int c)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return (&((char *)s)[i]);
-		i++;
-	}
-	if ((char)c == s[i])
-		return ((char *)(&s[i]));
-	return (NULL);
-}
 
 char	*get_next_line(int fd)
 {
@@ -92,6 +76,8 @@ static char	*set_line(char *line_buffer)
 	while (line_buffer[i] != '\n' && line_buffer[i] != '\0')
 		i++;
 	if (line_buffer[i] == 0)
+		return (NULL);
+	if (line_buffer[0] == '\n')
 		return (NULL);
 	stash = ft_substr(line_buffer, i + 1, ft_strlen(line_buffer) - i);
 	if (stash[0] == 0)

@@ -3,31 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 22:00:17 by tpassin           #+#    #+#             */
-/*   Updated: 2024/01/26 05:17:11 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/02 20:49:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "libft/libft.h"
+#include <string.h>
 # include <unistd.h>
 # include <stdio.h>
-# include <stdlib.h> 
+# include <stdlib.h>
 # include <fcntl.h>
 
-/*# define ERR() write(2, "Error\n", 6)
-# define ERR_RECTANGLE() ft_putstr_fd("Error\nLa map doit etre un rectangle\n", 2)
-# define ERR_WALL() ft_putstr_fd("Error\nLa map doit etre fermee\n", 2)*/
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+# endif
+
+# define RECTANGLE	"Error\nmust be a rectangle\n"
+# define EMPTY		"Error\nempty line\n"
+# define CLOSE		"Error\nmap must be closed\n"
+# define UNKNOWN	"Error\nunknown char\n"
+# define SPACE		"Error\nspace in map\n"
 
 typedef struct s_count
 {
 	int		player;
-	int		col;
+	int		collect;
 	int		line;
+	int		row;
 	int		exit;
 }			t_count;
 
@@ -39,13 +46,41 @@ typedef struct s_pos
 
 typedef struct s_data
 {
+	char		*string;
+	char		*stack;
+	char		*tmp;
 	char		**map;
-	int			*last_line;
-	char		*str;
-	t_pos		pos_player;
-	t_pos		pos_sortie;
+	char		**map_copy;
+	t_pos		pos;
 	t_count		info;
 	int			fd;
 }				t_data;
+
+/*parsing*/
+char	**map_copy(t_data *data, char **map_copy);
+char	**get_map(t_data *data, int fd, char **map);
+int	check_rectangle(t_data *data);
+int	check_wall(t_data *data);
+int	check_path(char *str);
+int	check_count_info(t_data *data);
+int check_map_contenu(t_data *data);
+int check_all(t_data *data);
+
+/*utils*/
+void	ft_putstr(char *s, int fd);
+void	ft_free_map(char **map);
+char	*ft_strchr(const char *s, int c);
+char	*get_next_line(int fd);
+char	**ft_split(char *s, char c);
+int		ft_strlen(const char *str);
+char	*ft_substr(char *s, unsigned int start, size_t len);
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strdup(const char *str);
+
+/*init data struct*/
+void init_contenu(t_data *data);
+void init_get_map(t_data *data);
+void init_data(t_data *data);
+int	init_map(t_data *data, char *str);
 
 #endif

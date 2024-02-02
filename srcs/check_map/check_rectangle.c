@@ -3,36 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   check_rectangle.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 21:27:15 by tpassin           #+#    #+#             */
-/*   Updated: 2024/01/23 05:59:13 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/02 16:39:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long.h"
 
 int	check_rectangle(t_data *data)
 {
-	int	x;
-	int	y;
+	int	i;
+	int	j;
 	int	len;
 
-	x = 1;
-	y = 0;
+	i = 1;
+	j = 0;
 	len = ft_strlen(data->map[0]);
-	while (data->map[x])
+	while (data->map[i])
 	{
-		while (data->map[x][y])
-			y++;
-		if (x > 0 && y != len)
+		while (data->map[i][j])
+			j++;
+		if (i > 0 && j != len)
 		{
-			ERR_RECTANGLE();
+			ft_putstr(RECTANGLE, 2);
 			return (0);
 		}
-		x++;
-		y = 0;
+		i++;
+		j = 0;
 	}
-	data->last_line = x;
-	return (x);
+	if (i < 2 || len < 2)
+		return (ft_putstr(RECTANGLE, 2), 0);
+	return (1);
 }
