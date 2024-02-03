@@ -52,6 +52,7 @@ void get_position(t_data *data)
 
 static void flood_fill(char **map, int x, int y, t_data *data)
 {
+    printf("%d\n%d\n", data->info.line, data->info.col);
     if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col)
         return ;
     if (map[x][y] == '1')
