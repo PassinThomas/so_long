@@ -22,7 +22,7 @@ char **map_copy(t_data *data)
     return (map);
 }
 
-void get_position(char **map, t_data *data)
+/*void get_position(char **map, t_data *data)
 {
     int i;
     int j;
