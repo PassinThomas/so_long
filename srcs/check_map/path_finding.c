@@ -33,7 +33,7 @@ void get_position(char **map, t_data *data)
     while (map[++i])
     {
         j = 0;
-        while(map[i][++j])
+        while(map[i][j])
         {
             if (map[i][j] == 'P')
             {
@@ -42,7 +42,9 @@ void get_position(char **map, t_data *data)
                 /*printf("%d\t%d\n", data->pos.y, data->pos.x);
                 printf("%c\n", data->map[data->pos.y][data->pos.x]);*/
             }
+            ++j;
         }
+        ++i;
     }
     ft_putstr("Error\n", 2);
     return ;
