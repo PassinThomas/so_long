@@ -79,7 +79,9 @@ int valid_map(char **map, t_data *data)
         j = 0;
         while(map[i][j])
         {
-            if (map[i][j] != '1')
+            if (map[i][j] != '1' && map[i][j] != '0' || map[i][j] != 'x')
+                return (printf("Element non atteignable\n"), 0);
         }
     }
+    return (1);
 }
