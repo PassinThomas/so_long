@@ -54,8 +54,8 @@ void flood_fill(char **map, int x, int y, t_data *data)
 {
     if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col)
         return ;
-    //if (map[x][y] == '1')
-        //return ;
+    if (map[x][y] == '1')
+        return ;
     map[x][y] = 'x';
     flood_fill(map, x + 1, y, data);
     flood_fill(map, x - 1, y, data);
