@@ -51,13 +51,13 @@ void get_position(t_data *data)
     return ;
 }
 
-void flood_fill(int x, int y, t_data *data)
+void flood_fill(char **map, pos p)
 {
     int len;
 
     len = ft_strlen(data->map[0]);
     if (x < 0 || x >= data->info.line || y < 0 || y >= len
-     || data->map_copy[data->pos.x][data->pos.y] == '1')
+     || map[pos.x][pos.y] == '1')
         return ;
-    
+
 }
