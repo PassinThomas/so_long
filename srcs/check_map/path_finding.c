@@ -91,5 +91,6 @@ void check_win(char **map, t_data *data)
 {
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
-    return printf("win\n") ;
+        printf("win\n");
+    return ;
 }
