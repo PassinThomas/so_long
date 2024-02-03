@@ -1,6 +1,5 @@
 #include "../../includes/so_long.h"
 
-
 char **map_copy(t_data *data)
 {
     char **map;
