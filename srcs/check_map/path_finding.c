@@ -22,7 +22,7 @@ char **map_copy(t_data *data)
     return (map);
 }
 
-void get_position(char **map, t_data *data)
+void get_position(char ***map, t_data *data)
 {
     int i;
     int j;
@@ -88,7 +88,7 @@ int valid_map(char **map, t_data *data)
 
 void check_win(char **map, t_data *data)
 {
-    flood_fill(map, data->pos.x, data->pos.y, data);
+    flood_fill(&map, data->pos.x, data->pos.y, data);
      int i;
     int j;
 
