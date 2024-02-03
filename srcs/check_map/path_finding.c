@@ -1,23 +1,26 @@
 #include "../../includes/so_long.h"
 
-char **map_copy(t_data *data, char **map_copy)
+char **map_copy(t_data *data)
 {
     int i;
     int len;
+    char **map;
 
     i = 0;
     len = data->info.line;
-    map_copy = (char **)malloc(sizeof(char *) * (len + 2));
-    if (!map_copy)
+    map = (char **)malloc(sizeof(char *) * (len + 2));
+    if (!map)
         return (NULL);
-    while (data->map[i])
+    if (data->map)
     {
-        printf("%s\n", data->map[i]);
-        map_copy[i] = ft_strdup(data->map[i]);
-        if (!map_copy[i])
-            return (ft_free_map(map_copy), NULL);
-        i++;
+        while (i < len)
+        {
+            map[i] = strdup(data->map[i]);
+            if (!map[i])
+                return (ft_free_map(map), NULL);
+            i++;
+        }
     }
-    map_copy[i] = NULL;
-    return (map_copy);
+    map[i] = NULL;
+    return (map);
 }

@@ -6,6 +6,7 @@ void init_data(t_data *data)
     data->pos.x = 0;
     data->pos.y = 0;
     data->fd = 0;
+	data->map_copy = NULL;
 }
 
 int check_all(t_data *data)
