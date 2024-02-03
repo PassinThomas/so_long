@@ -55,12 +55,12 @@ void flood_fill(char **map, int x, int y, t_data *data)
      printf("%c\n", map[x][y]);
     if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col)
         return ;
-    if (map[x][y] == '1')
+    else if (map[x][y] == '1')
         return ;
     map[x][y] = 'x';
     flood_fill(map, x + 1, y, data);
-    flood_fill(map, x - 1, y, data);
     flood_fill(map, x, y + 1, data);
+    flood_fill(map, x - 1, y, data);
     flood_fill(map, x, y - 1, data);
 }
 
