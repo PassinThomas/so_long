@@ -21,3 +21,17 @@ char **map_copy(t_data *data)
     map[i] = NULL;
     return (map);
 }
+
+void get_position(char **map)
+{
+    while (map[i])
+    {
+        while(map[i][j])
+        {
+            if (map[i][j] == 'P')
+            {
+                data->x
+            }
+        }
+    }
+}
