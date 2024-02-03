@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:59:32 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/02 16:35:07 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/03 19:04:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	check_wall(t_data *data)
 
 	i = 0;
 	len = ft_strlen(data->map[0]);
+	data->info.col = len;
 	while (data->map[i])
 	{
 		if (i == 0 || i == data->info.line - 1)

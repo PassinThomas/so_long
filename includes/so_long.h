@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 22:00:17 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/03 18:39:13 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/03 19:03:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_count
 	int		player;
 	int		collect;
 	int		line;
-	int		row;
+	int		col;
 	int		exit;
 }			t_count;
 
