@@ -63,8 +63,8 @@ static void flood_fill(char **map, int x, int y, t_data *data)
         return ;
     map[x][y] = 1;
     flood_fill(map, x + 1, y, data);
-    flood_fill(map, x - 1, y, data);
     flood_fill(map, x, y + 1, data);
+    flood_fill(map, x - 1, y, data);
     flood_fill(map, x, y - 1, data);
     return ;
 }
