@@ -70,5 +70,16 @@ void flood_fill(char **map, int x, int y, t_data *data)
 
 int valid_map(char **map, t_data *data)
 {
-    while ()
+    int i;
+    int j;
+
+    i = 0;
+    while (map[i])
+    {
+        j = 0;
+        while(map[i][j])
+        {
+            if (map[i][j])
+        }
+    }
 }
