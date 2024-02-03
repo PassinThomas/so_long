@@ -60,7 +60,7 @@ static void flood_fill(char **map, int x, int y, t_data *data)
     printf("%d\n", col);
     if (x < 0 || x >= row || y < 0 || y >= col)
         return ;
-    if ( map[x][y] == '1')
+    if (map[x][y] == '1')
         return ;
     map[x][y] = x;
     flood_fill(map, x + 1, y, data);
