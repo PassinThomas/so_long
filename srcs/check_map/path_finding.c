@@ -22,16 +22,28 @@ char **map_copy(t_data *data)
     return (map);
 }
 
-void get_position(char **map)
+void get_position(t_data *data)
 {
+    int i;
+    int j;
+
+    data->y = 0;
+    data->x = 0;
+    i = 0;
     while (map[i])
     {
+        j = 0;
         while(map[i][j])
         {
             if (map[i][j] == 'P')
             {
-                data->x
+                data->y = i;
+                data->x = j;
+                return ;
             }
+            j++;
         }
+        i++;
     }
+    printf()
 }
