@@ -21,6 +21,8 @@ int	init_map(t_data *data, char *str)
 {
 	init_data(data);
 
+	int fd;
+
 	if (!check_path(str))
 		return (free(data), 0);
 	data->fd = open(str, O_RDONLY);
@@ -31,8 +33,9 @@ int	init_map(t_data *data, char *str)
 		return (close(data->fd), free(data), 0);
 	if (!check_all(data))
 		return (close(data->fd), ft_free_map(data->map), free(data), 0);
-	data->map_copy = get_map(data, data->fd, data->map_copy);
+	data->map_copy = get_map(data, fd, data->map_copy);
 	close(data->fd);
+	close(fd);
 	ft_free_map(data->map);
 	return (1);
 }
