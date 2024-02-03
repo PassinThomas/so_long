@@ -51,7 +51,7 @@ void get_position(t_data *data)
     return ;
 }
 
-void flood_fill(char **map, int x, int y, t_data *data)
+static void flood_fill(char **map, int x, int y, t_data *data)
 {
     int row;
     int col;
@@ -68,7 +68,7 @@ void flood_fill(char **map, int x, int y, t_data *data)
     return ;
 }
 
-int valid_map(char **map, t_data *data)
+static int valid_map(char **map, t_data *data)
 {
     int i;
     int j;
@@ -92,5 +92,5 @@ void check_win(char **map, t_data *data)
 {
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
-        ft_free_map(map);
+    return printf("win\n"), ;
 }
