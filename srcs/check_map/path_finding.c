@@ -46,7 +46,7 @@ void get_position(char **map, t_data *data)
         }
         i++;
     }
-    ft_putstr("Error\n", 2);
+    ft_putstr("good\n", 1);
     return ;
 }
 
