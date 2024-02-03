@@ -45,5 +45,6 @@ void get_position(t_data *data)
         }
         i++;
     }
-    printf()
+    ft_putstr("Error\n", 2);
+    return ;
 }
