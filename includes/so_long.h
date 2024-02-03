@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 22:00:17 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/02 22:40:12 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/03 12:52:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strdup(const char *str);
 
 /*init data struct*/
+void get_position(t_data *data);
 void init_contenu(t_data *data);
 void init_get_map(t_data *data);
 void init_data(t_data *data);
