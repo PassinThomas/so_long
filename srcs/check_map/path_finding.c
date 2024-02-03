@@ -52,12 +52,7 @@ void get_position(t_data *data)
 
 static void flood_fill(char **map, int x, int y, t_data *data)
 {
-    int row;
-    int col;
-
-    row = data->info.line;
-    col = ft_strlen(data->map[0]);
-    if (x < 0 || x >= row || y < 0 || y >= col)
+    if (x < 0 || x >= data->info.line || y < 0 || y >= )
         return ;
     if (map[x][y] == '1')
         return ;
