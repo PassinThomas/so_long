@@ -37,8 +37,8 @@ void get_position(char **map, t_data *data)
         {
             if (map[i][j] == 'P')
             {
-                data->pos.x = i;
-                data->pos.y = j;
+                data->pos.x = i + 1;
+                data->pos.y = j + 1;
                 /*printf("%d\t%d\n", data->pos.y, data->pos.x);
                 printf("%c\n", data->map[data->pos.y][data->pos.x]);*/
             }
@@ -52,8 +52,6 @@ void get_position(char **map, t_data *data)
 
 void flood_fill(char **map, int x, int y, t_data *data)
 {
-    printf("%d\n", x);
-    printf("%d\n", y + 1);
     if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col)
         return ;
     if (map[x][y] == '1')
@@ -90,6 +88,7 @@ int valid_map(char **map, t_data *data)
 
 void check_win(char **map, t_data *data)
 {
+    printf("%c\n", map[data->pos.x][data->pos.y]);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
         printf("win\n");
