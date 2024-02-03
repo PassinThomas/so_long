@@ -58,19 +58,10 @@ void flood_fill(char **map, int x, int y, t_data *data)
     if (map[x][y] == '1')
         return ;
     map[x][y] = 1;
-//     flood_fill(map, x + 1, y, data);
-//     flood_fill(map, x, y + 1, data);
-//     flood_fill(map, x - 1, y, data);
-//     flood_fill(map, x, y - 1, data);
-    if (x + 1 < data->info.line)
-        flood_fill(map, x + 1, y, data);
-    if (y + 1 < data->info.col)
-        flood_fill(map, x, y + 1, data);
-    if (x - 1 >= 0)
-        flood_fill(map, x - 1, y, data);
-    if (y - 1 >= 0)
-        flood_fill(map, x, y - 1, data);
-    return ;
+    flood_fill(map, x + 1, y, data);
+    flood_fill(map, x, y + 1, data);
+    flood_fill(map, x - 1, y, data);
+    flood_fill(map, x, y - 1, data);
 }
 
 int valid_map(char **map, t_data *data)
