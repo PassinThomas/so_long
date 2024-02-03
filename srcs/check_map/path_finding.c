@@ -57,7 +57,6 @@ static void flood_fill(char **map, int x, int y, t_data *data)
 
     row = data->info.line;
     col = ft_strlen(data->map[0]);
-    printf("%d\n", col);
     if (x < 0 || x >= row || y < 0 || y >= col)
         return ;
     if (map[x][y] == '1')
