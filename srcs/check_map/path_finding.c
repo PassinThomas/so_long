@@ -79,7 +79,7 @@ int valid_map(char **map, t_data *data)
         j = 0;
         while(map[i][j])
         {
-            if (map[i][j])
+            if (map[i][j] != '1')
         }
     }
 }
