@@ -57,7 +57,9 @@ static void flood_fill(char **map, int x, int y, t_data *data)
 
     row = data->info.line;
     col = ft_strlen(data->map[0]);
-    if (x < 0 || x >= row || y < 0 || y >= col || map[x][y] == '1')
+    if (x < 0 || x >= row || y < 0 || y >= col)
+        return ;
+    if ( map[x][y] == '1')
         return ;
     map[x][y] = x;
     flood_fill(map, x + 1, y, data);
