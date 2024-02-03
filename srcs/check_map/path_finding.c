@@ -74,7 +74,7 @@ int valid_map(char **map, t_data *data)
         j = 0;
         while(map[i][j])
         {
-            if (map[i][j] == 'E' || map[i][j] == 'C')
+            if (map[i][j] == 'E' || map[i][j] == 'C' || map[i][j] == 'P')
             {
                 ft_free_map(map);
                 return (printf("Element non atteignable\n"), 0);
