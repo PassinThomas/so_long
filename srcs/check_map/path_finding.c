@@ -1,10 +1,9 @@
 #include "../../includes/so_long.h"
 
-char **map_copy(t_data *data)
+char **map_copy(char **map, t_data *data)
 {
     int i;
     int len;
-    char **map;
 
     i = 0;
     len = data->info.line;
