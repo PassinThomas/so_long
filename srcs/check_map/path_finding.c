@@ -65,7 +65,7 @@ void flood_fill(char **map, int x, int y, t_data *data)
     return ;
 }
 
-static int valid_map(char **map, t_data *data)
+int valid_map(char **map, t_data *data)
 {
     int i;
     int j;
