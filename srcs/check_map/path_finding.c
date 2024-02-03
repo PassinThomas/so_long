@@ -50,6 +50,33 @@ char **map_copy(t_data *data)
     return ;
 }*/
 
+void get_position(t_data *data)
+{
+    int i;
+    int j;
+
+    data->pos.x = -1; // Initialiser les coordonnées du personnage à une valeur impossible
+    data->pos.y = -1;
+    i = 0;
+    while (data->map[i])
+    {
+        j = 0;
+        while(data->map[i][j])
+        {
+            if (data->map[i][j] == 'P')
+            {
+                data->pos.x = i;
+                data->pos.y = j;
+                return;
+            }
+            j++;
+        }
+        i++;
+    }
+    // Si le personnage n'est pas trouvé dans la carte
+    ft_putstr("Erreur: Position du personnage introuvable\n", 2);
+}
+
 void flood_fill(char **map, int x, int y, t_data *data)
 {
     if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col)
