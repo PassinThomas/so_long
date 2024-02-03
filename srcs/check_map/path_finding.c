@@ -81,7 +81,16 @@ int valid_map(char **map, t_data *data)
         {
             if (map[i][j] != '1' && map[i][j] != '0' || map[i][j] != 'x')
                 return (printf("Element non atteignable\n"), 0);
+            j++;
         }
+        i++;
     }
     return (1);
+}
+
+void check_win(char **map, t_data *data)
+{
+    flood_fill(map, data->pos.x, data->pos.y, data);
+    if (valid_map(map, data))
+        ft_free_map(map);
 }
