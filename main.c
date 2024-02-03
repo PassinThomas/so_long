@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/03 21:47:01 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/03 21:53:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main(int ac, char **av)
 	map_cp = NULL;
 	if (init_map(data, av[1]))
 	{
-		printf("%c\n", data->map[data->pos.x + 1][data->pos.y + 1]);
 		map_cp = map_copy(data);
 		check_win(map_cp, data);
 		ft_free_map(data->map);
