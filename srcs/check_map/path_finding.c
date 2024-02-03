@@ -22,7 +22,7 @@ char **map_copy(t_data *data)
     return (map);
 }
 
-void get_position(char **map, t_data *data)
+/*void get_position(char **map, t_data *data)
 {
     int i;
     int j;
@@ -39,8 +39,8 @@ void get_position(char **map, t_data *data)
             {
                 data->pos.x = i;
                 data->pos.y = j;
-                /*printf("%d\t%d\n", data->pos.y, data->pos.x);
-                printf("%c\n", data->map[data->pos.y][data->pos.x]);*/
+                printf("%d\t%d\n", data->pos.y, data->pos.x);
+                printf("%c\n", data->map[data->pos.y][data->pos.x]);
             }
             j++;
         }
@@ -48,7 +48,7 @@ void get_position(char **map, t_data *data)
     }
     ft_putstr("good\n", 1);
     return ;
-}
+}*/
 
 void flood_fill(char **map, int x, int y, t_data *data)
 {
