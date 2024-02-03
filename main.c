@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/03 18:11:23 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/03 18:12:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int main(int ac, char **av)
 		close(data->fd);
 		free(data);
 	}
+	close(data->fd);
+	free(data);
 	return (0);
 }
