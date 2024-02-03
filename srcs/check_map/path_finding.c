@@ -36,8 +36,8 @@ void get_position(t_data *data)
         {
             if (data->map[i][j] == 'P')
             {
-                data->pos.y = i;
-                data->pos.x = j;
+                data->pos.x = i;
+                data->pos.y = j;
                 /*printf("%d\t%d\n", data->pos.y, data->pos.x);
                 printf("%c\n", data->map[data->pos.y][data->pos.x]);*/
                 return ;
