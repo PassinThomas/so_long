@@ -41,6 +41,7 @@ void get_position(char **map, t_data *data)
                 data->pos.y = j;
                 /*printf("%d\t%d\n", data->pos.y, data->pos.x);
                 printf("%c\n", data->map[data->pos.y][data->pos.x]);*/
+                ft_free_map(map);
                 return ;
             }
             j++;
