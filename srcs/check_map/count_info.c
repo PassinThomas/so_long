@@ -23,11 +23,7 @@ int check_map_contenu(t_data *data)
             && data->map[i][j] != 'P' && data->map[i][j] != 'E')
                 return(ft_putstr(UNKNOWN, 2), 0);
 			else if (data->map[i][j] == 'P')
-            {
-                data->pos.x = i;
-                data->pos.y = j;
                 data->info.player++;
-            }
             else if (data->map[i][j] == 'C')
                 data->info.collect++;
             else if (data->map[i][j] == 'E')
