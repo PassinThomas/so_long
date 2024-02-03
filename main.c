@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/03 11:58:46 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/03 12:02:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main(int ac, char **av)
 {
-	int fd = 0;
 	int i = 0;
 	int j;
 
@@ -27,6 +26,14 @@ int main(int ac, char **av)
 	if (init_map(data, av[1]))
 	{
 		data->map_copy = map_copy(data);
+		while (data->map_copy[i])
+		{
+			j = 0;
+			while (data->map_copy[i][j])
+				write(1, &data->map_copy[i][j++], 1);
+			write(1, "\n", 1);
+			i++;
+		}
 		ft_free_map(data->map_copy);
 		ft_free_map(data->map);
 		close(data->fd);
