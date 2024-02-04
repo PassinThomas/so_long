@@ -57,6 +57,7 @@ void flood_fill(char **map, int x, int y, t_data *data)
     if (map[x][y] == '1')
         return ;
     map[x][y] = 'x';
+    printf("%c\n", map[data->info.x][data->info.y]);
     flood_fill(map, x + 1, y, data);
     flood_fill(map, x - 1, y, data);
     flood_fill(map, x, y + 1, data);
