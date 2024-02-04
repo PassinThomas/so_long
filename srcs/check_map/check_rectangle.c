@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 21:27:15 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/04 03:10:41 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/04 03:11:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ int	check_rectangle(t_data *data)
 	{
 		while (data->map[i][j])
 		{
-			if (data->map[i][j] == 'P')
-			{
-				
 			j++;
 		}
 		if (i > 0 && j != len)
