@@ -28,8 +28,8 @@ void get_position(t_data *data)
     int j;
     char **map;
 
-    data->pos.y = 1;
-    data->pos.x = 1;
+    data->pos.y = 0;
+    data->pos.x = 0;
     i = 0;
     while (map[i])
     {
