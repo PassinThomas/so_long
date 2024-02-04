@@ -39,7 +39,6 @@ void get_position(char **map, t_data *data)
             {
                 data->pos.x += i;
                 data->pos.y += j;
-                ft_free_map(map);
                 return ;
               // printf("%c\n", data->map[data->pos.y][data->pos.x]);
             }
@@ -99,6 +98,7 @@ void check_win(t_data *data)
     map = NULL;
     map = map_copy(data);
     get_position(map, data);
+    ft_free_map(map);
     map = map_copy(data);
     printf("%c\n", map[data->pos.x][data->pos.y]);
     flood_fill(map, data->pos.x, data->pos.y, data);
