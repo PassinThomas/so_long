@@ -22,7 +22,7 @@ char **map_copy(t_data *data)
     return (map);
 }
 
-void get_position(t_data *data)
+void get_position(char **map, t_data *data)
 {
     int i;
     int j;
@@ -30,17 +30,18 @@ void get_position(t_data *data)
     data->pos.x = 0;
 
     i = 0;
-    while (data->map[i])
+    while (map[i])
     {
         j = 0;
-        while(data->map[i][j])
+        while(map[i][j])
         {
-            if (data->map[i][j] == 'P')
+            if (map[i][j] == 'P')
             {
                 data->pos.x += i;
                 data->pos.y += j;
-                exit (0);
-                // printf("%c\n", data->map[data->pos.y][data->pos.x]);
+                ft_free_map(map);
+                return ;
+              // printf("%c\n", data->map[data->pos.y][data->pos.x]);
             }
             j++;
         }
@@ -98,7 +99,6 @@ void check_win(t_data *data)
     map = NULL;
     map = map_copy(data);
     get_position(data);
-    ft_free_map(data->map);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
         printf("win\n");
