@@ -86,16 +86,19 @@ int valid_map(char **map, t_data *data)
     return (1);
 }
 
-void check_win(char **map, t_data *data)
+void check_win(t_data *data)
 {
+    char **map;
     //printf("%c\n", data->map[data->pos.y][data->pos.x]);
     // data->pos.x++;
     // data->pos.++;
     // printf("%d\n", data->pos.x);
     // int x = data->pos.x;
     // int y = data->pos.y;
+    map = NULL;
     data->pos.y = 0;
     data->pos.x = 0;
+    map = map_copy(data);
     get_position(data);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
