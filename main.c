@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/04 08:46:18 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/04 08:59:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,12 @@ int main(int ac, char **av)
 					{
 						data->pos.x = i;
 						data->pos.y = j;
+						break ;
 					}
 					j++;
 				}
+				if (map_cp[i][j] == 'P')
+                	break ;
 				i++;
 			}
 		}
