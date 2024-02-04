@@ -96,12 +96,11 @@ void check_win(t_data *data)
     // int x = data->pos.x;
     // int y = data->pos.y;
     map = NULL;
-    data->pos.y = 0;
-    data->pos.x = 0;
     map = map_copy(data);
     get_position(data);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
         printf("win\n");
+    ft_free_map(map);
     return ;
 }
