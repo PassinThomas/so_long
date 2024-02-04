@@ -26,17 +26,16 @@ void get_position(t_data *data)
 {
     int i;
     int j;
-    char **map;
     data->pos.y = 0;
     data->pos.x = 0;
 
     i = 0;
-    while (map[i])
+    while (data->map[i])
     {
         j = 0;
-        while(map[i][j])
+        while(data->map[i][j])
         {
-            if (map[i][j] == 'P')
+            if (data->map[i][j] == 'P')
             {
                 data->pos.x += i;
                 data->pos.y += j;
