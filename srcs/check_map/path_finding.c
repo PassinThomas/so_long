@@ -50,7 +50,8 @@ static void get_position(char **map, t_data *data)
 
 static void flood_fill(char **map, int x, int y, t_data *data)
 {
-    if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col || map[x][y] == 'x')
+    if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col
+    || map[x][y] == 'x')
         return ;
     if (map[x][y] == '1')
         return ;
@@ -75,7 +76,7 @@ static int valid_map(char **map, t_data *data)
             if (map[i][j] == 'E' || map[i][j] == 'C' || map[i][j] == 'P')
             {
                 ft_free_map(map);
-                return (printf("Element non atteignable\n"), 0);
+                return (ft_putstr("Element non atteignable\n", 2), 0);
             }
             j++;
         }
@@ -96,7 +97,7 @@ void check_win(t_data *data)
     if (valid_map(map, data))
     {
         ft_free_map(map);
-        printf("win\n");
+        ft_pustsr("win\n", 1);
     }
     return ;
 }

@@ -24,7 +24,7 @@ int	init_map(t_data *data, char *str)
 		return (free(data), 0);
 	data->fd = open(str, O_RDONLY);
 	if (data->fd < 0)
-		return (printf("error\nfail open\n"), free(data), 0);
+		return (ft_putstr("error\nfail open\n", 2), free(data), 0);
     data->map = get_map(data, data->fd, data->map);
 	if (!data->map)
 		return (close(data->fd), free(data), 0);
