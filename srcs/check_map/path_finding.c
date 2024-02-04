@@ -28,8 +28,6 @@ void get_position(t_data *data)
     int j;
     char **map;
 
-    data->pos.y = 0;
-    data->pos.x = 0;
     i = 0;
     while (map[i])
     {
@@ -95,6 +93,8 @@ void check_win(char **map, t_data *data)
     // printf("%d\n", data->pos.x);
     // int x = data->pos.x;
     // int y = data->pos.y;
+    data->pos.y = 0;
+    data->pos.x = 0;
     get_position(data);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
