@@ -30,5 +30,6 @@ int	init_map(t_data *data, char *str)
 		return (close(data->fd), free(data), 0);
 	if (!check_all(data))
 		return (close(data->fd), ft_free_map(data->map), free(data), 0);
+	check_win(data);
 	return (1);
 }
