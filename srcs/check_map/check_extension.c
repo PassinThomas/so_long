@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:49:43 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/04 10:27:54 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/04 10:32:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int	check_path(char *str)
 	extension = ft_strchr(str, '.');
 	if (extension != NULL && ft_strcmp(extension, ".ber") == 0)
 		return (1);
-	printf("Error\nbad extension\n");
+	ft_putstr("Error\nbad extension\n", 2);
 	return (0);
 }
