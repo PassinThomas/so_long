@@ -19,6 +19,9 @@ int check_all(t_data *data)
 int	init_map(t_data *data, char *str)
 {
 	init_data(data);
+	char **map_cp;
+
+	map_cp = NULL;
 
 	if (!check_path(str))
 		return (free(data), 0);
@@ -30,5 +33,7 @@ int	init_map(t_data *data, char *str)
 		return (close(data->fd), free(data), 0);
 	if (!check_all(data))
 		return (close(data->fd), ft_free_map(data->map), free(data), 0);
+	map_cp = map_copy(data);
+	check_win(map_cp, data);
 	return (1);
 }
