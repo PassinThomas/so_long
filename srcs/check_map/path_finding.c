@@ -52,12 +52,12 @@ void get_position(char **map, t_data *data)
 
 void flood_fill(char **map, int x, int y, t_data *data)
 {
-    if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col)
+    if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col || map[x][y] == 'x')
         return ;
     if (map[x][y] == '1')
         return ;
     map[x][y] = 'x';
-    printf("%c\n", map[data->info.x][data->info.y]);
+    printf("%c\n", map[data->pos.x][data->pos.y]);
     flood_fill(map, x + 1, y, data);
     flood_fill(map, x - 1, y, data);
     flood_fill(map, x, y + 1, data);
@@ -90,18 +90,11 @@ int valid_map(char **map, t_data *data)
 void check_win(t_data *data)
 {
     char **map;
-    //printf("%c\n", data->map[data->pos.y][data->pos.x]);
-    // data->pos.x++;
-    // data->pos.++;
-    // printf("%d\n", data->pos.x);
-    // int x = data->pos.x;
-    // int y = data->pos.y;
+
     map = NULL;
     map = map_copy(data);
     get_position(map, data);
-    ft_free_map(map);
-    map = map_copy(data);
-    // printf("%c\n", map[data->pos.x][data->pos.y]);
+    printf("%c\n", map[data->pos.x][data->pos.y]);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
         printf("win\n");
