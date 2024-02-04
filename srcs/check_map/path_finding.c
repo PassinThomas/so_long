@@ -40,13 +40,11 @@ void get_position(char **map, t_data *data)
                 data->pos.x += i;
                 data->pos.y += j;
                 return ;
-              // printf("%c\n", data->map[data->pos.y][data->pos.x]);
             }
             j++;
         }
         i++;
     }
-    ft_putstr("good\n", 1);
     return ;
 }
 
