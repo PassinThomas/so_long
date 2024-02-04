@@ -98,9 +98,9 @@ void check_win(t_data *data)
     // int y = data->pos.y;
     map = NULL;
     map = map_copy(data);
-    printf("%c\n", map[data->pos.x][data->pos.y]);
     get_position(map, data);
     map = map_copy(data);
+    printf("%c\n", map[data->pos.x][data->pos.y]);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
         printf("win\n");
