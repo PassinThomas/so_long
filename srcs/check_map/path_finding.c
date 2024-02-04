@@ -93,6 +93,7 @@ void check_win(char **copy, t_data *data)
     printf("%d\n", data->pos.x);
 
     copy = map_copy(data);
+    copy = NULL;
     flood_fill(copy, data->pos.x, data->pos.y, data);
     if (valid_map(copy, data))
         printf("win\n");

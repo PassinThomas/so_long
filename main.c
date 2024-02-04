@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/04 08:26:51 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/04 08:32:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ int main(int ac, char **av)
 	data = malloc(sizeof(t_data));
 	if (!data)
 		return (printf("faillure malloc\n"), 0);
-	map_cp = NULL;
 	if (init_map(data, av[1]))
 	{
 		check_win(map_cp, data);
-		ft_free_map(data->map);
 		ft_free_map(map_cp);
+		ft_free_map(data->map);
 		close(data->fd);
 		free(data);
 		return (0);
