@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/04 09:07:24 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/04 09:08:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ int main(int ac, char **av)
 		ft_free_map(data->map);
 		close(data->fd);
 	}
-	free(data);
 	return (0);
 }
