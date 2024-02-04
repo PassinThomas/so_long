@@ -22,7 +22,7 @@ char **map_copy(t_data *data)
     return (map);
 }
 
-void get_position(t_data *data)
+/*void get_position(t_data *data)
 {
     int i;
     int j;
@@ -49,7 +49,7 @@ void get_position(t_data *data)
     }
     ft_putstr("good\n", 1);
     return ;
-}
+}*/
 
 void flood_fill(char **map, int x, int y, t_data *data)
 {
