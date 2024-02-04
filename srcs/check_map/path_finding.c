@@ -96,6 +96,14 @@ void check_win(char **copy, t_data *data)
     copy = NULL;
     flood_fill(copy, data->pos.x, data->pos.y, data);
     if (valid_map(copy, data))
+    {
+        ft_free_map(copy);
         printf("win\n");
-    return ;
+        return ;
+    }
+    else
+    {
+        ft_free_map(copy);
+        printf("error\n");
+    }
 }
