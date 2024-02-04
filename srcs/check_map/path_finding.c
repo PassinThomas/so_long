@@ -87,9 +87,8 @@ int valid_map(char **map, t_data *data)
     return (1);
 }
 
-void check_win(char **map, t_data *data)
+void check_win(char **copy, t_data *data)
 {
-    char **copy;
     printf("%c\n", data->map[data->pos.y][data->pos.x]);
     printf("%d\n", data->pos.x);
 
