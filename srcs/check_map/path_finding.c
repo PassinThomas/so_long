@@ -90,6 +90,7 @@ int valid_map(char **map, t_data *data)
 void check_win(char **map, t_data *data)
 {
     //printf("%c\n", data->map[data->pos.y][data->pos.x]);
+    printf("%d\n", data->pos.x);
     int x = data->pos.x;
     int y = data->pos.y;
     flood_fill(map, x, y, data);
