@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 22:00:17 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/04 09:28:32 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/04 10:05:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ typedef struct s_data
 }				t_data;
 
 /*parsing*/
-char	**map_copy(t_data *data);
 char	**get_map(t_data *data, int fd, char **map);
 int	check_rectangle(t_data *data);
 int	check_wall(t_data *data);
@@ -78,7 +77,6 @@ char	*ft_strdup(const char *str);
 
 /*init data struct*/
 void check_win(t_data *data);
-void get_position(char **map, t_data *data);
 void init_contenu(t_data *data);
 void init_get_map(t_data *data);
 void init_data(t_data *data);

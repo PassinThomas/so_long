@@ -1,6 +1,6 @@
 #include "../../includes/so_long.h"
 
-char **map_copy(t_data *data)
+static char **map_copy(t_data *data)
 {
     char **map;
     int i;
@@ -22,7 +22,7 @@ char **map_copy(t_data *data)
     return (map);
 }
 
-void get_position(char **map, t_data *data)
+static void get_position(char **map, t_data *data)
 {
     int i;
     int j;
@@ -48,7 +48,7 @@ void get_position(char **map, t_data *data)
     return ;
 }
 
-void flood_fill(char **map, int x, int y, t_data *data)
+static void flood_fill(char **map, int x, int y, t_data *data)
 {
     if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col || map[x][y] == 'x')
         return ;
@@ -61,7 +61,7 @@ void flood_fill(char **map, int x, int y, t_data *data)
     flood_fill(map, x, y - 1, data);
 }
 
-int valid_map(char **map, t_data *data)
+static int valid_map(char **map, t_data *data)
 {
     int i;
     int j;
