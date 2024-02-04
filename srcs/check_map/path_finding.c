@@ -22,7 +22,7 @@ char **map_copy(t_data *data)
     return (map);
 }
 
-/*void get_position(t_data *data)
+void get_position(t_data *data)
 {
     int i;
     int j;
@@ -49,7 +49,7 @@ char **map_copy(t_data *data)
     }
     ft_putstr("good\n", 1);
     return ;
-}*/
+}
 
 void flood_fill(char **map, int x, int y, t_data *data)
 {
@@ -95,6 +95,7 @@ void check_win(char **map, t_data *data)
     // printf("%d\n", data->pos.x);
     // int x = data->pos.x;
     // int y = data->pos.y;
+    get_position(data);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
         printf("win\n");
