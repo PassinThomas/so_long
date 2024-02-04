@@ -44,6 +44,6 @@ int check_count_info(t_data *data)
         return (ft_putstr("Error\nnot collectible\n", 2), 0);
     else if(data->info.exit != 1)
          return (ft_putstr("Error\nonly 1 exit required\n", 2), 0);
-    printf("MAP OK\n");
+    ft_putstr("MAP OK\n", 1);
     return (1);
 }
