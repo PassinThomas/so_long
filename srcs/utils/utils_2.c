@@ -40,3 +40,17 @@ void	ft_putstr(char *s, int fd)
 	while (s[i])
 		write(fd, &s[i++], 1);
 }
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	if (!s1 || !s2)
+		return (0);
+	while (*s1 && *s1 == *s2 )
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++:
+	}
+	return (*s1 - *s2);
+}
