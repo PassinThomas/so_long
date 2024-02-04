@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/04 09:38:32 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/04 10:01:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int main(int ac, char **av)
 {
-	int i = 0;
-	int j;
-
 	t_data *data;
 	if (ac != 2)
 		return (printf("Error\n2args required\n"), 0);
