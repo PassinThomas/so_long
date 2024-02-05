@@ -15,7 +15,7 @@
 int main(int ac, char **av)
 {
 	t_data *data;
-	
+
 	if (ac != 2)
 		return (printf("Error\n2args required\n"), 0);
 	data = malloc(sizeof(t_data));
