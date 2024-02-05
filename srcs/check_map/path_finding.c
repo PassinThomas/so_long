@@ -22,32 +22,6 @@ static char **map_copy(t_data *data)
     return (map);
 }
 
-static void get_position(char **map, t_data *data)
-{
-    int i;
-    int j;
-    data->pos.y = 0;
-    data->pos.x = 0;
-
-    i = 0;
-    while (map[i])
-    {
-        j = 0;
-        while(map[i][j])
-        {
-            if (map[i][j] == 'P')
-            {
-                data->pos.x += i;
-                data->pos.y += j;
-                return ;
-            }
-            j++;
-        }
-        i++;
-    }
-    return ;
-}
-
 static void flood_fill(char **map, int x, int y, t_data *data)
 {
     if (x < 0 || x >= data->info.line || y < 0 || y >= data->info.col
@@ -91,13 +65,12 @@ void check_win(t_data *data)
 
     map = NULL;
     map = map_copy(data);
-    get_position(map, data);
     printf("%c\n", map[data->pos.x][data->pos.y]);
     flood_fill(map, data->pos.x, data->pos.y, data);
     if (valid_map(map, data))
     {
         ft_free_map(map);
-        ft_pustsr("win\n", 1);
+        ft_putstr("win\n", 1);
     }
     return ;
 }
