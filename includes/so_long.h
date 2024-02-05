@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 22:00:17 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/04 10:30:56 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/05 17:36:11 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include <string.h>
+# include <string.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
 # endif
 
 # define RECTANGLE	"Error\nmust be a rectangle\n"
@@ -42,6 +42,8 @@ typedef struct s_pos
 {
 	int	x;
 	int	y;
+	int	i;
+	int	j;
 }			t_pos;
 
 typedef struct s_data
@@ -57,12 +59,12 @@ typedef struct s_data
 
 /*parsing*/
 char	**get_map(t_data *data, int fd, char **map);
-int	check_rectangle(t_data *data);
-int	check_wall(t_data *data);
-int	check_path(char *str);
-int	check_count_info(t_data *data);
-int check_map_contenu(t_data *data);
-int check_all(t_data *data);
+int		check_rectangle(t_data *data);
+int		check_wall(t_data *data);
+int		check_path(char *str);
+int		check_count_info(t_data *data);
+int		check_map_contenu(t_data *data);
+int		check_all(t_data *data);
 
 /*utils*/
 void	ft_putstr(char *s, int fd);
@@ -75,11 +77,12 @@ char	*ft_substr(char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strdup(const char *str);
 int		ft_strcmp(const char *s1, const char *s2);
+
 /*init data struct*/
-void check_win(t_data *data);
-void init_contenu(t_data *data);
-void init_get_map(t_data *data);
-void init_data(t_data *data);
-int	init_map(t_data *data, char *str);
+void	check_win(t_data *data);
+void	init_contenu(t_data *data);
+void	init_get_map(t_data *data);
+int		init_map(t_data *data, char *str);
+void	init_data(t_data *data);
 
 #endif

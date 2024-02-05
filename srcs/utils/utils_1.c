@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 03:16:51 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/02 19:44:58 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/05 16:45:25 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen(const char *str)
 
 char	*ft_strdup(const char *str)
 {
-	char	*new;
+	char		*new;
 	ssize_t		i;
 
 	new = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
@@ -40,7 +40,7 @@ char	*ft_strdup(const char *str)
 	return (new);
 }
 
-static char	*fill_sub(char const *s, unsigned int start, size_t len, char *str)
+char	*fill_sub(char const *s, unsigned int start, size_t len, char *str)
 {
 	size_t	i;
 	size_t	j;
