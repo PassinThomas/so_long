@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:53:30 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/05 18:01:39 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/06 10:52:48 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,15 @@ void	init_data(t_data *data)
 
 static int	error_map(char *stack)
 {
-	int	empty;
 	int	i;
 
 	i = 0;
-	empty = 0;
 	while (stack[i])
 	{
 		if (i == 0 && stack[i] == '\n')
 			return (ft_putstr(EMPTY, 2), 1);
 		if (stack[i] == ' ' || stack[i] == '\t' || stack[i] == '\n')
-		{
-			empty = 1;
 			i++;
-		}
 		else
 		{
 			if (i > 0 && ((stack[i - 1] == ' ' || stack[i - 1] == '\t'
