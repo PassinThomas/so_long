@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 16:24:59 by tpassin           #+#    #+#              #
-#    Updated: 2024/02/06 23:47:01 by marvin           ###   ########.fr        #
+#    Updated: 2024/02/06 23:50:08 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ SRCS =	get_next_line/get_next_line.c \
 		srcs/check_map/count_info.c \
 		srcs/check_map/init_map.c \
 		srcs/check_map/path_finding.c \
-
 OBJS = ${SRCS:.c=.o}
 
 CC = cc

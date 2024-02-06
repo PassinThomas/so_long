@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 16:24:59 by tpassin           #+#    #+#              #
-#    Updated: 2024/02/06 23:47:49 by marvin           ###   ########.fr        #
+#    Updated: 2024/02/06 23:49:35 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,15 +27,25 @@ CC = cc
 
 CFLAGS = -g3 -Wall -Wextra #-Werror
 
+LFLAGS = -L./mlx_linux -lmlx -Ilmlx -lXext -lX11
+
+MLX = mlx_linux/libmlx.a
+
+# MLXL = 	@make -C ./mlx_linux
+
+
+IFLAGS = -I./
+
 RM = rm -f
 
 all: ${NAME}
 
 $(NAME): ${OBJS}
-	${CC} ${OBJS} -o $(NAME)
+	$(MAKE) -C ./mlx_linux
+	${CC} ${OBJS} ${MLXL} ${LFLAGS} -o $(NAME)
 
 %.o:%.c
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${IFLAGS} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
 	${RM} ${OBJS}
