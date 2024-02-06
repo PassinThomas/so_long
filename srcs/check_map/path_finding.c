@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_finding.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:09:02 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/05 17:28:10 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/06 12:38:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	check_win(t_data *data)
 
 	map = NULL;
 	map = map_copy(data);
-	printf("%c\n", map[data->pos.x][data->pos.y]);
+	//printf("%c\n", map[data->pos.x][data->pos.y]);
 	flood_fill(map, data->pos.x, data->pos.y, data);
 	if (valid_map(map))
 	{
