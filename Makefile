@@ -22,6 +22,7 @@ SRCS =	get_next_line/get_next_line.c \
 		srcs/check_map/count_info.c \
 		srcs/check_map/init_map.c \
 		srcs/check_map/path_finding.c \
+
 OBJS = ${SRCS:.c=.o}
 
 CC = cc
@@ -33,7 +34,6 @@ LFLAGS = -L./mlx_linux -lmlx -Ilmlx -lXext -lX11
 MLX = mlx_linux/libmlx.a
 
 # MLXL = 	@make -C ./mlx_linux
-
 
 IFLAGS = -I./
 

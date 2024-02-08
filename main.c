@@ -14,6 +14,8 @@
 
 int	main(int ac, char **av)
 {
+	void	*mlx_ptr;
+	void	*mlx_win;
 	t_data	*data;
 
 	if (ac != 2)
@@ -23,6 +25,11 @@ int	main(int ac, char **av)
 		return (printf("faillure malloc\n"), 0);
 	if (init_map(data, av[1]))
 	{
+		mlx_ptr = mlx_init();
+		mlx_win = mlx_new_window(mlx_ptr, 800, 600, "so_long");
+		mlx_loop(mlx_ptr);
+		mlx_destroy_window(mlx_win, mlx_ptr);
+		mlx_ptr = NULL;
 		ft_free_map(data->map);
 		close(data->fd);
 		free(data);

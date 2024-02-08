@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include "../mlx_linux/mlx.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
