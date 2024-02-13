@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:53:30 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/06 23:54:20 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/12 19:06:01 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_data(t_data *data)
 	data->tmp = NULL;
 	data->stack = NULL;
 	data->info.line = 0;
+	data->error = 0;
 }
 
 static int	error_map(char *stack)
@@ -59,12 +60,12 @@ char	**get_map(t_data *data, int fd, char **map)
 		data->tmp = data->stack;
 		data->stack = ft_strjoin(data->tmp, data->string);
 		if (error_map(data->string))
-			return (free(data->string), free(data->tmp),
-				free(data->stack), NULL);
-		free(data->string);
-		free(data->tmp);
+			data->error = 1;
+		free_str(data->string, data->tmp);
 		data->info.line++;
 	}
+	if (data->error)
+		return (free(data->stack), NULL);
 	map = ft_split(data->stack, '\n');
 	if (!map)
 		return (free(data->stack), NULL);
@@ -96,5 +97,6 @@ int	init_map(t_data *data, char *str)
 	if (!check_all(data))
 		return (close(data->fd), ft_free_map(data->map), free(data), 0);
 	check_win(data);
+	close(data->fd);
 	return (1);
 }

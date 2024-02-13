@@ -6,7 +6,7 @@
 /*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:03:34 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/05 18:00:10 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/13 04:16:19 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,5 @@ int	check_count_info(t_data *data)
 		return (ft_putstr("Error\nnot collectible\n", 2), 0);
 	else if (data->info.exit != 1)
 		return (ft_putstr("Error\nonly 1 exit required\n", 2), 0);
-	ft_putstr("MAP OK\n", 1);
 	return (1);
 }

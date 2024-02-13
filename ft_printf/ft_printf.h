@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/13 08:56:08 by tpassin          ###   ########.fr       */
+/*   Created: 2023/12/01 01:15:12 by tpassin           #+#    #+#             */
+/*   Updated: 2024/02/13 09:05:07 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	main(int ac, char **av)
-{
-	t_data	*data;
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
-	if (ac != 2)
-		return (ft_putstr("Error\n2 args required\n", 2), 0);
-	data = malloc(sizeof(t_data));
-	if (!data)
-		return (ft_putstr("Error\nfaillure malloc\n", 2), 0);
-	if (init_map(data, av[1]))
-	{
-		data->count = 0;
-		init_game(data);
-		free(data->mlx);
-		ft_free_map(data->map);
-		free(data);
-	}
-	return (0);
-}
+int		print_conv(char c, va_list ap);
+size_t	ft_print_hex(unsigned int nb, char c, int *ptr);
+int		ft_putchar(int c);
+int		ft_putnbr(int n, int *ptr);
+int		ft_printstr(char *s);
+size_t	ft_unsigned_nb(unsigned int nb, int *ptr);
+int		ft_printf(const char *str, ...);
+int		ft_put_p(void *nbr);
+#endif

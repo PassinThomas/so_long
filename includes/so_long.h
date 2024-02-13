@@ -6,7 +6,7 @@
 /*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 22:00:17 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/05 17:36:11 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/13 08:51:43 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include "ft_printf/ft_printf.h"
 # include "../mlx_linux/mlx.h"
 
 # ifndef BUFFER_SIZE
@@ -29,6 +30,15 @@
 # define CLOSE		"Error\nmap must be closed\n"
 # define UNKNOWN	"Error\nunknown char\n"
 # define SPACE		"Error\nspace in map\n"
+
+typedef struct s_sprite
+{
+	void	*player;
+	void	*exit;
+	void	*coll;
+	void	*wall;
+	void	*floor;
+}				t_sprite;
 
 typedef struct s_count
 {
@@ -49,12 +59,17 @@ typedef struct s_pos
 
 typedef struct s_data
 {
+	void		*mlx;
+	void		*win;
 	char		*string;
 	char		*stack;
 	char		*tmp;
 	char		**map;
+	int			error;
+	int			count;
 	t_pos		pos;
 	t_count		info;
+	t_sprite	sprite;
 	int			fd;
 }				t_data;
 
@@ -82,8 +97,16 @@ int		ft_strcmp(const char *s1, const char *s2);
 /*init data struct*/
 void	check_win(t_data *data);
 void	init_contenu(t_data *data);
-void	init_get_map(t_data *data);
 int		init_map(t_data *data, char *str);
 void	init_data(t_data *data);
+void	free_str(char *str, char *str2);
+
+/*init mlx*/
+void	init_img(t_data *data);
+void	init_window(t_data *data);
+int		get_img(t_data *data);
+int		key_hook(int keycode, t_data *data);
+void	destroy_img(t_data *data);
+void	init_game(t_data *data);
 
 #endif

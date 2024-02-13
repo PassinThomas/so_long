@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 18:56:42 by tpassin           #+#    #+#             */
-/*   Updated: 2024/02/13 08:56:08 by tpassin          ###   ########.fr       */
+/*   Created: 2023/11/14 12:43:20 by tpassin           #+#    #+#             */
+/*   Updated: 2023/12/04 20:44:11 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+int	ft_putchar(int c)
 {
-	t_data	*data;
-
-	if (ac != 2)
-		return (ft_putstr("Error\n2 args required\n", 2), 0);
-	data = malloc(sizeof(t_data));
-	if (!data)
-		return (ft_putstr("Error\nfaillure malloc\n", 2), 0);
-	if (init_map(data, av[1]))
-	{
-		data->count = 0;
-		init_game(data);
-		free(data->mlx);
-		ft_free_map(data->map);
-		free(data);
-	}
-	return (0);
+	return (write(1, &c, 1));
 }
